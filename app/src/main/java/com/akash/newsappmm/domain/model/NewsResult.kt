@@ -14,3 +14,10 @@ data class NewsResult(
     val imgURL : String,
     val link : String
 )
+fun NewsResult.toResult() : Result{
+    return Result(
+        title = title,
+        description = description,
+        link = link
+    )
+}

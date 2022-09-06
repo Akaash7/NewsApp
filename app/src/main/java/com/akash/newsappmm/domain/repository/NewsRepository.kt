@@ -9,5 +9,6 @@ interface NewsRepository {
     suspend fun getLatestNewsResult() : List<NewsResult>
     suspend fun getArchiveNewsResult() : List<ArchiveResult>
     suspend fun getNewsSources() : List<SourcesResult>
+    suspend fun getSearchResult(search:String) : List<NewsResult>
     suspend fun clearTables()
 }

@@ -32,4 +32,12 @@ interface NewsApi {
         @Query("apikey") apiKey:String = API_KEY,
         @Query("country") country:String = INDIA
     ) : NewsSourcesDTO
+
+    @GET("/api/1/news")
+    suspend fun getSearchResult(
+        @Query("apikey") apiKey:String = API_KEY,
+        @Query("country") country:String = INDIA,
+        @Query("q") search:String
+    ) : LatestNewsDTO
+
 }

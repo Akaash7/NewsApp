@@ -14,6 +14,7 @@ import com.akash.newsappmm.domain.model.SourcesResult
 import com.akash.newsappmm.domain.repository.NewsRepository
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 import javax.xml.transform.Source
 
 class NewsRepositoryImpl(
@@ -71,6 +72,22 @@ class NewsRepositoryImpl(
             Log.d("Exception","IOException")
         }
         val list = dao.getNewsSources()
+
+        return list
+    }
+
+    override suspend fun getSearchResult( search :String): List<NewsResult> {
+        var list = emptyList<NewsResult>()
+        try{
+            val response = api.getSearchResult(search = search)
+            list = response.latestNewsResults.map{it.toNewsResult()}
+        }
+        catch (e:HttpException){
+            Log.d("Exception","HttpException")
+        }
+        catch (e:IOException){
+            Log.d("Exception","IOException")
+        }
 
         return list
     }

@@ -14,3 +14,11 @@ data class ArchiveResult(
     val imgURL : String,
     val link : String
 )
+
+fun ArchiveResult.toResult() : Result{
+    return Result(
+        title = title,
+        description = description,
+        link = link
+    )
+}

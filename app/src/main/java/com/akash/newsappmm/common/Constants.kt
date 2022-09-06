@@ -2,7 +2,7 @@ package com.akash.newsappmm.common
 
 object Constants {
     const val BASE_URL = "https://newsdata.io/"
-    const val API_KEY = "pub_10292fdac7c0a4cadba59204360732a315721"
+    const val API_KEY = "pub_10962bf9889352ba6b797ead3b78bfa3e3ce5"
 }
 
 object CountryCodes{

@@ -10,5 +10,11 @@ data class SourcesResult(
     val name : String,
     val link : String,
     val description : String
-){
+)
+fun SourcesResult.toResult() : Result{
+    return Result(
+        title = name,
+        description = description,
+        link = link
+    )
 }

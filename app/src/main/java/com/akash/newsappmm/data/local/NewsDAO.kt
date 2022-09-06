@@ -4,6 +4,7 @@ import androidx.room.*
 import com.akash.newsappmm.domain.model.ArchiveResult
 import com.akash.newsappmm.domain.model.NewsResult
 import com.akash.newsappmm.domain.model.SourcesResult
+import dagger.Provides
 
 @Dao
 interface NewsDAO {
